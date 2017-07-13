@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: spina_block_spec_development
+
+test:
+  <<: *default
+  database: spina_block_spec_test
+
+production:
+  <<: *default
+  database: spina_block_spec_production

@@ -1,0 +1,10 @@
+.bundle/
+log/**
+pkg/
+spec/dummy/log/**
+spec/dummy/tmp/**
+coverage
+Gemfile.lock
+spec/examples.txt
+*.gem
+.byebug-history
