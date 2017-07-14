@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616152116) do
+ActiveRecord::Schema.define(version: 106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20170616152116) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "spina_block_parts", force: :cascade do |t|
+  create_table "spina_content_block_parts", force: :cascade do |t|
     t.string   "title"
     t.string   "name"
     t.datetime "created_at",         null: false
@@ -57,7 +57,18 @@ ActiveRecord::Schema.define(version: 20170616152116) do
     t.string   "page_partable_type"
   end
 
-  create_table "spina_blocks", force: :cascade do |t|
+  create_table "spina_content_block_translations", force: :cascade do |t|
+    t.integer  "spina_content_block_id", null: false
+    t.string   "locale",                 null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "title"
+    t.string   "description"
+    t.index ["locale"], name: "index_spina_content_block_translations_on_locale", using: :btree
+    t.index ["spina_content_block_id"], name: "index_539de42cd6e30430184f9da17c7db43066947933", using: :btree
+  end
+
+  create_table "spina_content_blocks", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
     t.string   "slug"
@@ -69,12 +80,6 @@ ActiveRecord::Schema.define(version: 20170616152116) do
     t.string   "layout_template"
     t.boolean  "draft",           default: false
     t.boolean  "active",          default: true
-  end
-
-  create_table "spina_colors", force: :cascade do |t|
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "spina_layout_parts", force: :cascade do |t|

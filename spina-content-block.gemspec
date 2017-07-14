@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["spec/**/*"]
+  s.test_files = Dir["spec/**/*_spec.rb"]
 
   s.add_runtime_dependency 'spina', '~> 0.11', '>= 0.11.1'
   s.add_runtime_dependency 'kaminari', '~> 1.0.1', '>= 1.0.1'
