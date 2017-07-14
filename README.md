@@ -4,6 +4,16 @@ Reusable content blocks for Spina CMS! Create a block of content, and then add i
 to any template you like, so footers and common reusable blocks can be readily
 reused across the site.
 
+# Status
+
+[ ![Codeship Status for spaceindent/spina-content-block](https://app.codeship.com/projects/b7187400-4a32-0135-f397-5afafc15162f/status?branch=master)](https://app.codeship.com/projects/232508)
+
+[![Code Climate](https://codeclimate.com/github/spaceindent/spina-content-block/badges/gpa.svg)](https://codeclimate.com/github/spaceindent/spina-content-block)
+
+[![Issue Count](https://codeclimate.com/github/spaceindent/spina-content-block/badges/issue_count.svg)](https://codeclimate.com/github/spaceindent/spina-content-block)
+
+[![Test Coverage](https://codeclimate.com/github/spaceindent/spina-content-block/badges/coverage.svg)](https://codeclimate.com/github/spaceindent/spina-content-block/coverage)
+
 # Usage
 
 Add the gem to your gemfile:
