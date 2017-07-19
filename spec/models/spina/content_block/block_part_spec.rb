@@ -2,7 +2,7 @@
 
 module Spina::ContentBlock
   RSpec.describe BlockPart, type: :model do
-    let(:part) { FactoryGirl.build :spina_content_block_part }
+    let(:part) { build :spina_content_block_part }
 
     it 'is a valid object' do
       expect(part).to be_valid
@@ -13,7 +13,7 @@ module Spina::ContentBlock
     end
 
     context 'invalid object' do
-      let(:part) { FactoryGirl.build :spina_content_block_part, :invalid }
+      let(:part) { build :spina_content_block_part, :invalid }
 
       it 'is invalud' do
         expect(part).not_to be_valid

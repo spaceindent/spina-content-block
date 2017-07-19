@@ -3,7 +3,7 @@
 module Spina::ContentBlock
   RSpec.describe Block, type: :model do
     context 'valid object' do
-      let(:block) { FactoryGirl.build :spina_content_block }
+      let(:block) { build :spina_content_block }
 
       it 'is a valid object' do
         expect(block).to be_valid
@@ -15,7 +15,7 @@ module Spina::ContentBlock
     end
 
     context 'invlaid object' do
-      let(:invalid_block) { FactoryGirl.build :spina_content_block, :invalid }
+      let(:invalid_block) { build :spina_content_block, :invalid }
 
       it 'is invalid' do
         expect(invalid_block).not_to be_valid
@@ -28,8 +28,8 @@ module Spina::ContentBlock
 
     context 'duplicate slugs' do
       it 'are invalid' do
-        saved_block = FactoryGirl.create :spina_content_block, slug: 'footer'
-        block = FactoryGirl.build :spina_content_block, slug: 'footer'
+        saved_block = create :spina_content_block, slug: 'footer'
+        block = build :spina_content_block, slug: 'footer'
         expect(block).not_to be_valid
       end
     end
