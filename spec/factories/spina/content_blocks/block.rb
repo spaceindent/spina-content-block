@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :spina_content_block, class: Spina::ContentBlock::Block do
-    name 'Content block for Footer'
-    slug 'Footer'
+    name { Faker::Lorem.sentence }
+    slug { Faker::Internet.slug }
 
     trait :invalid do
       name nil
