@@ -1,5 +1,5 @@
 Spina::Engine.routes.draw do
   namespace :admin do
-    resources :blocks
+    resources :content_blocks
   end
 end
