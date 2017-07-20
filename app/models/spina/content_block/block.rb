@@ -8,8 +8,8 @@ module Spina
 
     translates :title, :description
 
-    scope :published, -> { where(active: true) }
-    scope :draft, -> { where(active: false) }
+    scope :published, -> { where(draft: false) }
+    scope :draft, -> { where(draft: true) }
 
     has_many :block_parts, dependent: :destroy, inverse_of: :block
 

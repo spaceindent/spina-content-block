@@ -33,5 +33,22 @@ module Spina::ContentBlock
         expect(block).not_to be_valid
       end
     end
+
+    context '.draft' do
+      it 'only returns draft blocks' do
+        draft = create(:spina_content_block, :draft)
+        published = create(:spina_content_block)
+        expect(Block.draft).to eq [draft]
+      end
+    end
+
+    context '.published' do
+      it 'only returns published blocks' do
+        draft = create(:spina_content_block, :draft)
+        published = create(:spina_content_block)
+        expect(Block.published).to eq [published]
+      end
+    end
+
   end
 end
