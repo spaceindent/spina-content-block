@@ -1,2 +1,17 @@
-= yield
+- content_for :application do
+  %header#header
+    #header_actions
+      = yield(:header_actions) if content_for?(:header_actions)
+
+    .breadcrumbs= render_breadcrumbs separator: '<div class="divider"></div>'
+
+    %nav#secondary.tabs
+      %ul
+        %li{class: ('active' if controller_name == 'pages')}
+          = link_to t('spina.content_blocks.published'), spina.admin_content_blocks_path(filter: 'active')
+        %li{class: ('active' if controller_name == 'pages')}
+          = link_to t('spina.content_blocks.draft'), spina.admin_content_blocks_path(filter: 'draft')
+
+  = yield
+
 = render template: "layouts/spina/admin/admin"

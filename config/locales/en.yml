@@ -2,3 +2,5 @@ en:
   spina:
     content_blocks:
       blocks: 'Blocks'
+      draft: 'Draft'
+      published: 'Published'

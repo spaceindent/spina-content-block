@@ -10,7 +10,12 @@ module Spina
       layout 'spina/admin/content_block'
 
       def index
-        @blocks = Block.all
+        @blocks = case(params[:filter])
+        when 'draft'
+          Block.draft
+        else
+          Block.published
+        end
       end
 
       private def set_locale
